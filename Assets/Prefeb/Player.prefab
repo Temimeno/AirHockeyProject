@@ -98,7 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   rotationSpeed: 10
-  strikerspeed: 7
+  strikerspeed: 10
 --- !u!1 &2583921745271504381
 GameObject:
   m_ObjectHideFlags: 0

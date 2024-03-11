@@ -7,17 +7,15 @@ public class MainPlayerMovement : NetworkBehaviour
 {
     public float speed = 5.0f;
     public float rotationSpeed = 10.0f;
-    public float strikerspeed = 100f;
 
-    GameObject st;
+    public float strikerspeed;
     Rigidbody rb;
-    Rigidbody striker;
+    Rigidbody strikerRigidbody;
 
     public void Start()
     {
         rb = this.GetComponent<Rigidbody>();
-        st = GameObject.FindGameObjectWithTag("striker");
-        striker = GameObject.FindGameObjectWithTag("striker").GetComponent<Rigidbody>();
+        strikerRigidbody = GameObject.FindGameObjectWithTag("striker").GetComponent<Rigidbody>();
         
     }
 
@@ -36,7 +34,8 @@ public class MainPlayerMovement : NetworkBehaviour
     {
         if(col.gameObject.tag == "striker")
         {
-            
+            //strikerRigidbody.velocity = new Vector3(strikerspeed, strikerRigidbody.velocity.y, strikerspeed);
         }
     }
+
 }
