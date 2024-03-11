@@ -7,48 +7,36 @@ public class MainPlayerMovement : NetworkBehaviour
 {
     public float speed = 5.0f;
     public float rotationSpeed = 10.0f;
+    public float strikerspeed = 100f;
+
+    GameObject st;
     Rigidbody rb;
+    Rigidbody striker;
 
     public void Start()
     {
         rb = this.GetComponent<Rigidbody>();
+        st = GameObject.FindGameObjectWithTag("striker");
+        striker = GameObject.FindGameObjectWithTag("striker").GetComponent<Rigidbody>();
+        
     }
 
     private void FixedUpdate()
     {
         if(IsOwner)
         {
-            /*float translation = Input.GetAxis("Vertical") * speed;
-            translation *= Time.deltaTime;
-            rb.MovePosition(rb.position + this.transform.forward * translation);
+            float horizontalMovement = Input.GetAxis("Horizontal") * speed;
+            float verticalMovement = Input.GetAxis("Vertical") * speed;
 
-            float rotation = Input.GetAxis("Horizontal");
-            if(rotation != 0)
-            {
-                rotation *= rotationSpeed;
-                Quaternion turn = Quaternion.Euler(0f, rotation, 0f);
-                rb.MoveRotation(rb.rotation * turn);
-            }
-            else
-            {
-                rb.angularVelocity = Vector3.zero;
-            }*/
-            if (Input.GetKey(KeyCode.W))
-            {
-                transform.Translate(Vector3.forward * Time.deltaTime * speed);
-            }
-            if (Input.GetKey(KeyCode.S))
-            { 
-                transform.Translate(-1 * Vector3.forward * Time.deltaTime * speed);
-            }
-            if (Input.GetKey(KeyCode.A)) { 
+            rb.velocity = new Vector3 (horizontalMovement, 0, verticalMovement);
+        }
+    }
 
-                transform.Translate(Vector3.left * Time.deltaTime * speed);
-            }
-            if (Input.GetKey(KeyCode.D))
-            {
-                transform.Translate(-1 * Vector3.left * Time.deltaTime * speed);
-            }
+    public void OnCollisionEnter(Collision col)
+    {
+        if(col.gameObject.tag == "striker")
+        {
+            
         }
     }
 }
