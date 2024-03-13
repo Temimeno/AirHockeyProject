@@ -34,7 +34,9 @@ public class MainPlayerMovement : NetworkBehaviour
     {
         if(col.gameObject.tag == "striker")
         {
-            //strikerRigidbody.velocity = new Vector3(strikerspeed, strikerRigidbody.velocity.y, strikerspeed);
+            Vector3 direction = col.contacts[0].point - transform.position;
+            direction = direction.normalized; // Reverse the direction
+            strikerRigidbody.velocity = direction * strikerspeed;        
         }
     }
 
