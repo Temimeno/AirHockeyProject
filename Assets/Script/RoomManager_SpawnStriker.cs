@@ -8,11 +8,6 @@ public class RoomManager_SpawnStriker : NetworkBehaviour
     public GameObject Striker;
     public GameObject scoreManager;
 
-    public GameObject SpawnStrikerL;
-    public GameObject SpawnStrikerR;
-
-
-
     PlayerStats playerStats;
 
     public void Update()
@@ -36,8 +31,8 @@ public class RoomManager_SpawnStriker : NetworkBehaviour
     [ServerRpc]
     public void SpawnStrikerLeftServerRpc()
     {
-        Vector3 spawnPos = SpawnStrikerL.transform.position;
-        Quaternion spawnRot = SpawnStrikerL.transform.rotation;
+        Vector3 spawnPos = new Vector3(-4f, 0f, 0f);
+        Quaternion spawnRot = Quaternion.Euler(0f, 0f, 0f);
         GameObject strikerNew = Instantiate(Striker, spawnPos, spawnRot);
         strikerNew.GetComponent<NetworkObject>().Spawn(true);
     }
@@ -45,8 +40,8 @@ public class RoomManager_SpawnStriker : NetworkBehaviour
     [ServerRpc]
     public void SpawnStrikerRightServerRpc()
     {
-        Vector3 spawnPos = SpawnStrikerR.transform.position;
-        Quaternion spawnRot = SpawnStrikerR.transform.rotation;
+        Vector3 spawnPos = new Vector3(4f, 0f, 0f);
+        Quaternion spawnRot = Quaternion.Euler(0f, 0f, 0f);
         GameObject strikerNew = Instantiate(Striker, spawnPos, spawnRot);
         strikerNew.GetComponent<NetworkObject>().Spawn(true);
     }
