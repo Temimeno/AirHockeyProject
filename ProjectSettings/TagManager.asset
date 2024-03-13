@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - striker
+  - GoalLeft
+  - GoalRight
+  - ScoreManager
   layers:
   - Default
   - TransparentFX

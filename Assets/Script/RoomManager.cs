@@ -7,9 +7,12 @@ public class RoomManager : MonoBehaviour
 {
     public GameObject joinPanel;
     public GameObject startButton;
+    public GameObject scorePanel;
+    public GameObject playerStats;
 
     private void Start()
     {
+        
         NetworkManager.Singleton.OnServerStarted += HandleServerStarted;
         NetworkManager.Singleton.OnClientConnectedCallback += HandleClientConnected;
     }
@@ -27,6 +30,8 @@ public class RoomManager : MonoBehaviour
         {
             joinPanel.SetActive(false);
             //startButton.SetActive(true);
+            scorePanel.SetActive(true);
+            playerStats.SetActive(true);
         }
     }
 
