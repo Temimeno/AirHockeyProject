@@ -10,9 +10,9 @@ public class RoomManager : MonoBehaviour
     public GameObject scorePanel;
     public GameObject playerStats;
 
+
     private void Start()
     {
-        
         NetworkManager.Singleton.OnServerStarted += HandleServerStarted;
         NetworkManager.Singleton.OnClientConnectedCallback += HandleClientConnected;
     }

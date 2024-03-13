@@ -8,6 +8,7 @@ TagManager:
   - GoalLeft
   - GoalRight
   - ScoreManager
+  - RoomManager
   layers:
   - Default
   - TransparentFX
