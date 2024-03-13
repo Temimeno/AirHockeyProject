@@ -23,11 +23,19 @@ public class Scoring : NetworkBehaviour
         if (collider.gameObject.tag == "GoalLeft")
         {
             playerStats.scoreP2.Value++;
+            StartCoroutine(StrikerDestroy());
         }
 
         if (collider.gameObject.tag == "GoalRight")
         {
             playerStats.scoreP1.Value++;
+            StartCoroutine(StrikerDestroy());
         }
+    }
+
+    IEnumerator StrikerDestroy()
+    {
+        yield return new WaitForSeconds(2f);
+        Destroy(gameObject);
     }
 }
