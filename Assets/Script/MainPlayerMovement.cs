@@ -15,7 +15,6 @@ public class MainPlayerMovement : NetworkBehaviour
     public void Start()
     {
         rb = this.GetComponent<Rigidbody>();
-        strikerRigidbody = GameObject.FindGameObjectWithTag("striker").GetComponent<Rigidbody>();
         
     }
 
@@ -28,6 +27,7 @@ public class MainPlayerMovement : NetworkBehaviour
 
             rb.velocity = new Vector3 (horizontalMovement, 0, verticalMovement);
         }
+        strikerRigidbody = GameObject.FindGameObjectWithTag("striker").GetComponent<Rigidbody>();
     }
 
     public void OnCollisionEnter(Collision col)
