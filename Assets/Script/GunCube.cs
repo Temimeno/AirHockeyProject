@@ -14,5 +14,9 @@ public class GunCube : NetworkBehaviour
             spawnerBulletCube.DestroyServerRpc(networkObjId);
             Destroy(gameObject);
         }
+        if(col.gameObject.tag == "striker")
+        {
+            Destroy(gameObject);
+        }
     }
 }

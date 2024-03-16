@@ -17,11 +17,6 @@ public class MainPlayerMovement : NetworkBehaviour
         rb = this.GetComponent<Rigidbody>();
     }
 
-    public void Update()
-    {
-        strikerRigidbody = GameObject.FindGameObjectWithTag("striker").GetComponent<Rigidbody>();
-    }
-
     private void FixedUpdate()
     {
         if(IsOwner)
@@ -30,14 +25,16 @@ public class MainPlayerMovement : NetworkBehaviour
             float verticalMovement = Input.GetAxis("Vertical") * speed;
 
             rb.velocity = new Vector3 (horizontalMovement, 0, verticalMovement);
-        }    }
+        }
+        strikerRigidbody = GameObject.FindGameObjectWithTag("striker").GetComponent<Rigidbody>();
+    }
 
     public void OnCollisionEnter(Collision col)
     {
         if(col.gameObject.tag == "striker")
         {
             Vector3 direction = col.contacts[0].point - transform.position;
-            direction = direction.normalized; // Reverse the direction
+            direction = direction.normalized;
             strikerRigidbody.velocity = direction * strikerspeed;        
         }
     }

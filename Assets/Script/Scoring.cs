@@ -5,17 +5,12 @@ using Unity.Netcode;
 
 public class Scoring : NetworkBehaviour
 {
-    public GameObject scoreManager;
-    public bool StrikerWinScore = false;
+    public GameObject scoreManager; 
     PlayerStats playerStats;
-    RoomManager_SpawnStriker roomManager_SpawnStriker;
+    public RoomManager_SpawnStriker roomManager_SpawnStriker;
 
-    private void Update()
+    private void Start()
     {
-        /*if(scoreManager.activeInHierarchy)
-        {
-            playerStats = GameObject.FindGameObjectWithTag("ScoreManager").GetComponent<PlayerStats>();
-        }*/
         roomManager_SpawnStriker = GameObject.FindGameObjectWithTag("RoomManager").GetComponent<RoomManager_SpawnStriker>();
     }
     private void OnTriggerEnter(Collider collider)

@@ -36,7 +36,8 @@ public class RoomManager_SpawnStriker : NetworkBehaviour
         Quaternion spawnRot = Quaternion.Euler(0f, 0f, 0f);
         GameObject strikerNew = Instantiate(Striker, spawnPos, spawnRot);
         spawnerStriker.Add(strikerNew);
-        strikerNew.GetComponent<NetworkObject>().Spawn(true);
+        strikerNew.GetComponent<Scoring>().roomManager_SpawnStriker = this;
+        strikerNew.GetComponent<NetworkObject>().Spawn();
     }
 
     [ServerRpc]
@@ -46,7 +47,8 @@ public class RoomManager_SpawnStriker : NetworkBehaviour
         Quaternion spawnRot = Quaternion.Euler(0f, 0f, 0f);
         GameObject strikerNew = Instantiate(Striker, spawnPos, spawnRot);
         spawnerStriker.Add(strikerNew);
-        strikerNew.GetComponent<NetworkObject>().Spawn(true);
+        strikerNew.GetComponent<Scoring>().roomManager_SpawnStriker = this;
+        strikerNew.GetComponent<NetworkObject>().Spawn();
     }
 
     [ServerRpc(RequireOwnership = false)]
