@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3093816172880767596}
   - component: {fileID: 7068187506545777180}
   - component: {fileID: 7342195570576112310}
-  - component: {fileID: -4901141984362841174}
   - component: {fileID: 2256940247208926569}
   - component: {fileID: 4326071317063356093}
   - component: {fileID: 465812822697842787}
@@ -104,22 +103,6 @@ MonoBehaviour:
   speed: 5
   rotationSpeed: 10
   strikerspeed: 15
---- !u!114 &-4901141984362841174
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1478308090599264730}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38097c2ba8f3ec84099cf77b9dd5de92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreP1:
-    m_InternalValue: 5
-  scoreP2:
-    m_InternalValue: 5
 --- !u!114 &2256940247208926569
 MonoBehaviour:
   m_ObjectHideFlags: 0
