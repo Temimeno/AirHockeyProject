@@ -7,7 +7,7 @@ public class RoomManager_SpawnStriker : NetworkBehaviour
 {
     public GameObject Striker;
     public GameObject scoreManager;
-    private  List<GameObject> spawnerStriker = new List<GameObject>();
+    public List<GameObject> spawnerStriker = new List<GameObject>();
 
     PlayerStats playerStats;
 

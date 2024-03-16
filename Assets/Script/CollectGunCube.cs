@@ -6,14 +6,11 @@ using Unity.Netcode;
 public class CollectGunCube : NetworkBehaviour
 {
     public int Bullet = 0;
-    public GameObject Gun;
-    public SpawnerBulletCube spawnerBulletCube;
-
     void Update()
     {
         if(Bullet == 1)
         {
-            Gun.SetActive(true);
+            
         }
     }
 
@@ -24,8 +21,6 @@ public class CollectGunCube : NetworkBehaviour
             if(Bullet < 2)
             {
                 Bullet++;
-                ulong networkObjId = GetComponent<NetworkObject>().NetworkObjectId;
-                spawnerBulletCube.DestroyServerRpc(networkObjId);
             }
         }
     }
