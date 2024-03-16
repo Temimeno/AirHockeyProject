@@ -10,7 +10,7 @@ public class SpawnerBulletCube : NetworkBehaviour
     public float DelayspawnGuncube;
     public float time = 0f;
     public float timespawn = 5f;
-    private List<GameObject> spawnerGunCube = new List<GameObject>();
+    public List<GameObject> spawnerGunCube = new List<GameObject>();
     
     PlayerStats playerStats;
 
@@ -35,7 +35,7 @@ public class SpawnerBulletCube : NetworkBehaviour
         Quaternion spawnRot = Quaternion.Euler(0f,0f,0f);
         GameObject GunCubeNew = Instantiate(GunCube, spawnPos, spawnRot);
         spawnerGunCube.Add(GunCubeNew);
-        GunCubeNew.GetComponent<CollectGunCube>().spawnerBulletCube = this;
+        GunCubeNew.GetComponent<GunCube>().spawnerBulletCube = this;
         GunCubeNew.GetComponent<NetworkObject>().Spawn();
     }
 
