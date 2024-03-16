@@ -35,6 +35,8 @@ public class Scoring : NetworkBehaviour
     IEnumerator StrikerDestroy()
     {
         yield return new WaitForSeconds(3f);
+        ulong networkObjId = GetComponent<NetworkObject>().NetworkObjectId;
+        roomManager_SpawnStriker.DestroyServerRpc(networkObjId);
         Destroy(gameObject);
     }
 
