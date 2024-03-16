@@ -8,15 +8,16 @@ public class GunCube : NetworkBehaviour
 
     private void OnCollisionEnter(Collision col)
     {
+        if(!IsOwner) return;
         if(col.gameObject.tag == "Player")
         {
             ulong networkObjId = GetComponent<NetworkObject>().NetworkObjectId;
             spawnerBulletCube.DestroyServerRpc(networkObjId);
-            Destroy(gameObject);
         }
         if(col.gameObject.tag == "striker")
         {
-            Destroy(gameObject);
+            ulong networkObjId = GetComponent<NetworkObject>().NetworkObjectId;
+            spawnerBulletCube.DestroyServerRpc(networkObjId);
         }
     }
 }
