@@ -9,6 +9,8 @@ TagManager:
   - GoalRight
   - ScoreManager
   - RoomManager
+  - BulletCube
+  - GunCube
   layers:
   - Default
   - TransparentFX

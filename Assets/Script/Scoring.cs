@@ -10,9 +10,6 @@ public class Scoring : NetworkBehaviour
     PlayerStats playerStats;
     RoomManager_SpawnStriker roomManager_SpawnStriker;
 
-
-    // Start is called before the first frame update
-
     private void Update()
     {
         /*if(scoreManager.activeInHierarchy)
@@ -21,12 +18,11 @@ public class Scoring : NetworkBehaviour
         }*/
         roomManager_SpawnStriker = GameObject.FindGameObjectWithTag("RoomManager").GetComponent<RoomManager_SpawnStriker>();
     }
-    // Update is called once per frame
     private void OnTriggerEnter(Collider collider)
     {
         if (collider.gameObject.tag == "GoalLeft")
         {
-            //playerStats.scoreP2.Value++;
+            //playerStats.scoreP2.Value++
             roomManager_SpawnStriker.IncreaseScorePlayer2();
             StartCoroutine(StrikerDestroy());
             StartCoroutine(DelaySpawnStrikerLeft());
