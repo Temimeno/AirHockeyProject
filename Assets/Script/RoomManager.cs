@@ -9,6 +9,7 @@ public class RoomManager : MonoBehaviour
     public GameObject startButton;
     public GameObject scorePanel;
     public GameObject playerStats;
+    public List<uint> AltPlayerPrefab;
 
 
     private void Start()
@@ -83,7 +84,18 @@ public class RoomManager : MonoBehaviour
         response.CreatePlayerObject = true;
 
         // The Prefab hash value of the NetworkPrefab, if null the default NetworkManager player Prefab is used
-        response.PlayerPrefabHash = null;
+        int playerSelectNum = 1;
+
+        if (clientId == 0)
+        {
+            playerSelectNum = 0;
+        }
+        else
+        {
+            playerSelectNum = 1;
+        }
+
+        response.PlayerPrefabHash = AltPlayerPrefab[playerSelectNum];
 
         // Position to spawn the player object (if null it uses default of Vector3.zero)
         response.Position = Vector3.zero;
