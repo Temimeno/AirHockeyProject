@@ -1430,7 +1430,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &512294432
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1868,7 +1868,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &735601081
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2560,6 +2560,10 @@ MonoBehaviour:
   startButton: {fileID: 423928894}
   scorePanel: {fileID: 1875608737}
   playerStats: {fileID: 1869112789}
+  BulletP1: {fileID: 735601080}
+  BulletP2: {fileID: 1962721910}
+  HpP1: {fileID: 1840173362}
+  HpP2: {fileID: 512294431}
   AltPlayerPrefab: 11ddd2e629554434
 --- !u!4 &1384817991
 Transform:
@@ -3192,7 +3196,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1840173363
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3560,7 +3564,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1962721911
 RectTransform:
   m_ObjectHideFlags: 0

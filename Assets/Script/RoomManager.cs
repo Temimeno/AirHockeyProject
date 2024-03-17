@@ -9,6 +9,10 @@ public class RoomManager : MonoBehaviour
     public GameObject startButton;
     public GameObject scorePanel;
     public GameObject playerStats;
+    public GameObject BulletP1;
+    public GameObject BulletP2;
+    public GameObject HpP1;
+    public GameObject HpP2;
     public List<uint> AltPlayerPrefab;
 
 
@@ -33,6 +37,10 @@ public class RoomManager : MonoBehaviour
             //startButton.SetActive(true);
             scorePanel.SetActive(true);
             playerStats.SetActive(true);
+            BulletP1.SetActive(true);
+            BulletP2.SetActive(true);
+            HpP1.SetActive(true);
+            HpP2.SetActive(true);
         }
     }
 
