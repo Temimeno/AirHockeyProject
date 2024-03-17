@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 7068187506545777180}
   - component: {fileID: 7342195570576112310}
   - component: {fileID: 2256940247208926569}
-  - component: {fileID: 3377859893066603992}
   - component: {fileID: 589067934543234673}
   m_Layer: 0
   m_Name: Player 1
@@ -51,7 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 3872578833
+  GlobalObjectIdHash: 2969027738
   InScenePlacedSourceGlobalObjectIdHash: 3872578833
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -134,18 +133,6 @@ MonoBehaviour:
   InLocalSpace: 0
   Interpolate: 1
   SlerpPosition: 0
---- !u!114 &3377859893066603992
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1478308090599264730}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 621ee3047037fc3488b7c26aa139286a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &589067934543234673
 MonoBehaviour:
   m_ObjectHideFlags: 0

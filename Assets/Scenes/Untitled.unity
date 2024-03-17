@@ -2253,7 +2253,6 @@ MonoBehaviour:
   scorePanel: {fileID: 1875608737}
   playerStats: {fileID: 1869112789}
   AltPlayerPrefab: 11ddd2e629554434
-  playerSelectNum: 0
 --- !u!4 &1384817991
 Transform:
   m_ObjectHideFlags: 0

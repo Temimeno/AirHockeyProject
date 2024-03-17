@@ -29,6 +29,16 @@ public class RoomManager_SpawnStriker : NetworkBehaviour
         playerStats.scoreP2.Value++;
     }
 
+    public void IncreaseBulletPlayer1()
+    {
+        playerStats.bulletP1.Value++;
+    }
+
+    public void IncreaseBulletPlayer2()
+    {
+        playerStats.bulletP2.Value++;
+    }
+
     [ServerRpc]
     public void SpawnStrikerLeftServerRpc()
     {
