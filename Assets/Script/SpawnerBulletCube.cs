@@ -28,7 +28,7 @@ public class SpawnerBulletCube : NetworkBehaviour
         }
     }
     
-    [ServerRpc]
+    [ServerRpc(RequireOwnership = false)]
     public void SpawnGunCubeServerRpc()
     {
         Vector3 spawnPos = new Vector3(Random.Range(-6,7), 0, Random.Range(-3,3));
