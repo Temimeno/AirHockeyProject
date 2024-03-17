@@ -19,11 +19,11 @@ public class Gun : NetworkBehaviour
         if(!IsOwner) return;
         if(Input.GetKeyDown(KeyCode.Mouse0))
         {
-            if(playerStats.bulletP1.Value >= 1)
+            /*if(playerStats.bulletP1.Value >= 1)
             {
                 SpawnBulletServerRpc();
                 playerStats.bulletP1.Value--;
-            }
+            }*/
         }
     }
 

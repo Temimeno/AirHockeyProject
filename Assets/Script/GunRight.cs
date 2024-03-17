@@ -19,11 +19,11 @@ public class GunRight : NetworkBehaviour
         if(!IsOwner) return;
         if(Input.GetKeyDown(KeyCode.Mouse0))
         {
-            if(playerStats.bulletP2.Value >= 1)
+            /*if(playerStats.bulletP2.Value >= 1)
             {
                 SpawnBulletRightServerRpc();
                 playerStats.bulletP2.Value--;
-            }
+            }*/
         }
     }
 

@@ -29,7 +29,7 @@ public class RoomManager_SpawnStriker : NetworkBehaviour
         playerStats.scoreP2.Value++;
     }
 
-    public void IncreaseBulletPlayer1()
+    /*public void IncreaseBulletPlayer1()
     {
         if(playerStats.bulletP1.Value <= 6)
         {
@@ -43,7 +43,7 @@ public class RoomManager_SpawnStriker : NetworkBehaviour
         {
             playerStats.bulletP2.Value++;
         }
-    }
+    }*/
 
     [ServerRpc]
     public void SpawnStrikerLeftServerRpc()

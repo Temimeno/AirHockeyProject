@@ -16,7 +16,7 @@ public class BulletCollect : NetworkBehaviour
     {
         if (collision.gameObject.tag == "GunCube")
         {
-            if (IsOwnedByServer)
+            /*if (IsOwnedByServer)
             {
                 if (playerStats.bulletP1.Value <= 6)
                 {
@@ -30,7 +30,7 @@ public class BulletCollect : NetworkBehaviour
                 {
                     playerStats.bulletP2.Value++;
                 }
-            }
+            }*/
         }
     }
 }

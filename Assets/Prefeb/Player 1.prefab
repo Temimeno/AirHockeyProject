@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7342195570576112310}
   - component: {fileID: 2256940247208926569}
   - component: {fileID: 589067934543234673}
+  - component: {fileID: 8598327441385638146}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Player
@@ -147,6 +148,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 2991789920997278760, guid: 7a1a0987cd43fec468b739782f47bd85, type: 3}
   spawnerBullet: []
+--- !u!114 &8598327441385638146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1478308090599264730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b165ccf076425f45977d8bf4a667c31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletP1:
+    m_InternalValue: 0
+  bulletP2:
+    m_InternalValue: 0
 --- !u!1 &2583921745271504381
 GameObject:
   m_ObjectHideFlags: 0

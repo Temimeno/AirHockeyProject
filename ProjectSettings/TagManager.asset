@@ -12,6 +12,7 @@ TagManager:
   - BulletCube
   - GunCube
   - Player2
+  - OutGround
   layers:
   - Default
   - TransparentFX
