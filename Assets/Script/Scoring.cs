@@ -30,6 +30,27 @@ public class Scoring : NetworkBehaviour
             StartCoroutine(StrikerDestroy());
             StartCoroutine(DelaySpawnStrikerRight());
         }
+        
+        if (collider.gameObject.tag == "OutGround")
+        {
+            int random = Random.Range(0, 2);
+            if(random == 0)
+            {
+                StartCoroutine(StrikerDestroy());
+                StartCoroutine(DelaySpawnStrikerRight());
+            }
+            if(random == 1)
+            {
+                StartCoroutine(StrikerDestroy());
+                StartCoroutine(DelaySpawnStrikerLeft());
+            }
+            else
+            {   
+                StartCoroutine(StrikerDestroy());
+                StartCoroutine(DelaySpawnStrikerLeft());
+            }
+            Debug.Log(random);
+        }
     }
 
     IEnumerator StrikerDestroy()

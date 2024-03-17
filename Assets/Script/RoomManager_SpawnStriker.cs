@@ -31,12 +31,18 @@ public class RoomManager_SpawnStriker : NetworkBehaviour
 
     public void IncreaseBulletPlayer1()
     {
-        playerStats.bulletP1.Value++;
+        if(playerStats.bulletP1.Value <= 6)
+        {
+            playerStats.bulletP1.Value++;
+        }
     }
 
     public void IncreaseBulletPlayer2()
     {
-        playerStats.bulletP2.Value++;
+        if(playerStats.bulletP2.Value <= 6)
+        {
+            playerStats.bulletP2.Value++;
+        }
     }
 
     [ServerRpc]
