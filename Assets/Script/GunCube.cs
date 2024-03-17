@@ -14,6 +14,11 @@ public class GunCube : NetworkBehaviour
             ulong networkObjId = GetComponent<NetworkObject>().NetworkObjectId;
             spawnerBulletCube.DestroyServerRpc(networkObjId);
         }
+        if(col.gameObject.tag == "Player2")
+        {
+            ulong networkObjId = GetComponent<NetworkObject>().NetworkObjectId;
+            spawnerBulletCube.DestroyServerRpc(networkObjId);
+        }
         if(col.gameObject.tag == "striker")
         {
             ulong networkObjId = GetComponent<NetworkObject>().NetworkObjectId;
