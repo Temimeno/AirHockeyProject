@@ -136,7 +136,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 84
   m_CollisionDetection: 0
 --- !u!114 &4584426280648094930
 MonoBehaviour:
@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 1705088321
+  GlobalObjectIdHash: 2617441955
   InScenePlacedSourceGlobalObjectIdHash: 2617441955
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -172,6 +172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreManager: {fileID: 0}
+  roomManager_SpawnStriker: {fileID: 0}
 --- !u!114 &7037488886313462817
 MonoBehaviour:
   m_ObjectHideFlags: 0

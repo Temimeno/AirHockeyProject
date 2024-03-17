@@ -30,7 +30,7 @@ public class Gun : NetworkBehaviour
     [ServerRpc]
     public void SpawnBulletServerRpc()
     {
-        Vector3 spawnPos = transform.position + (transform.forward * -1.5f) + (transform.up * 1.5f);
+        Vector3 spawnPos = transform.position + (transform.right * 1f);
         Quaternion spawnRot = transform.rotation;
         GameObject bulletNew = Instantiate(bullet, spawnPos, spawnRot);
         spawnerBullet.Add(bulletNew);

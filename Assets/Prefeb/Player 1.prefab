@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 2969027738
+  GlobalObjectIdHash: 3872578833
   InScenePlacedSourceGlobalObjectIdHash: 3872578833
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -85,7 +85,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &7342195570576112310
 MonoBehaviour:
