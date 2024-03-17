@@ -7,11 +7,14 @@ public class Gun : NetworkBehaviour
 {
     public GameObject bullet;
     public List<GameObject> spawnerBullet = new List<GameObject>();
+
+    BulletState bulletState;
     PlayerStats playerStats;
     
     void Start()
     {
         playerStats = GameObject.FindGameObjectWithTag("ScoreManager").GetComponent<PlayerStats>();
+        bulletState = GetComponent<BulletState>();
     }
 
     void Update()
@@ -19,11 +22,11 @@ public class Gun : NetworkBehaviour
         if(!IsOwner) return;
         if(Input.GetKeyDown(KeyCode.Mouse0))
         {
-            /*if(playerStats.bulletP1.Value >= 1)
+            if(bulletState.bulletP1.Value >= 1)
             {
                 SpawnBulletServerRpc();
-                playerStats.bulletP1.Value--;
-            }*/
+                bulletState.bulletP1.Value--;
+            }
         }
     }
 

@@ -47,14 +47,14 @@ public class BulletState : NetworkBehaviour
         {
             if(IsOwnedByServer)
             {
-                if(bulletP1.Value <= 6)
+                if(bulletP1.Value < 6)
                 {
                     bulletP1.Value++;
                 }
             }
             else
             {
-                if(bulletP2.Value <= 6)
+                if(bulletP2.Value < 6)
                 {
                     bulletP2.Value++;
                 }
