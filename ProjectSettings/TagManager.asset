@@ -13,6 +13,7 @@ TagManager:
   - GunCube
   - Player2
   - OutGround
+  - Bullet
   layers:
   - Default
   - TransparentFX
