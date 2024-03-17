@@ -32,7 +32,7 @@ public class SpawnerBulletCube : NetworkBehaviour
     public void SpawnGunCubeServerRpc()
     {
         Vector3 spawnPos = new Vector3(Random.Range(-6,7), 0, Random.Range(-3,3));
-        Quaternion spawnRot = Quaternion.Euler(0f,0f,0f);
+        Quaternion spawnRot = transform.rotation;
         GameObject GunCubeNew = Instantiate(GunCube, spawnPos, spawnRot);
         spawnerGunCube.Add(GunCubeNew);
         GunCubeNew.GetComponent<GunCube>().spawnerBulletCube = this;
@@ -49,12 +49,12 @@ public class SpawnerBulletCube : NetworkBehaviour
         Destroy(obj);
     }
 
-    private GameObject findSpawnerGunCube(ulong networkObjId)
+    private GameObject findSpawnerGunCube(ulong netWorkObjId)
     {
         foreach (GameObject GunCubeNew in spawnerGunCube)
         {
-            ulong GunCubeID = GunCube.GetComponent<NetworkObject>().NetworkObjectId;
-            if(GunCubeID == networkObjId) { return GunCubeNew; }
+            ulong GunCubeID = GunCubeNew.GetComponent<NetworkObject>().NetworkObjectId;
+            if(GunCubeID == netWorkObjId) { return GunCubeNew; }
         }
         return null;
     }

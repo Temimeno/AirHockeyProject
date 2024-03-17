@@ -52,9 +52,9 @@ public class RoomManager_SpawnStriker : NetworkBehaviour
     }
 
     [ServerRpc(RequireOwnership = false)]
-    public void DestroyServerRpc(ulong networkObjectId)
+    public void DestroyServerRpc(ulong networkObjId)
     {
-        GameObject obj = findSpawnerStriker(networkObjectId);
+        GameObject obj = findSpawnerStriker(networkObjId);
         if(obj == null) return;
         obj.GetComponent<NetworkObject>().Despawn();
         spawnerStriker.Remove(obj);
@@ -62,12 +62,12 @@ public class RoomManager_SpawnStriker : NetworkBehaviour
         
     }
 
-    private GameObject findSpawnerStriker(ulong networkObjectId)
+    private GameObject findSpawnerStriker(ulong netWorkObjId)
     {
-        foreach( GameObject strikerNew in spawnerStriker)
+        foreach (GameObject strikerNew in spawnerStriker)
         {
             ulong StrikerID = strikerNew.GetComponent<NetworkObject>().NetworkObjectId;
-            if(StrikerID == networkObjectId)
+            if(StrikerID == netWorkObjId)
             {
                 return strikerNew;
             }

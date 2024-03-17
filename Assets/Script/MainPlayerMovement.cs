@@ -10,11 +10,16 @@ public class MainPlayerMovement : NetworkBehaviour
 
     public float strikerspeed;
     Rigidbody rb;
-    Rigidbody strikerRigidbody;
+    public Rigidbody strikerRigidbody;
 
     public void Start()
     {
         rb = this.GetComponent<Rigidbody>();
+    }
+
+    public void Update()
+    {
+        strikerRigidbody = GameObject.FindGameObjectWithTag("striker").GetComponent<Rigidbody>();
     }
 
     private void FixedUpdate()
@@ -26,7 +31,6 @@ public class MainPlayerMovement : NetworkBehaviour
 
             rb.velocity = new Vector3 (horizontalMovement, 0, verticalMovement);
         }
-        strikerRigidbody = GameObject.FindGameObjectWithTag("striker").GetComponent<Rigidbody>();
     }
 
     public void OnCollisionEnter(Collision col)
@@ -35,7 +39,7 @@ public class MainPlayerMovement : NetworkBehaviour
         {
             Vector3 direction = col.contacts[0].point - transform.position;
             direction = direction.normalized;
-            strikerRigidbody.velocity = direction * strikerspeed;        
+            strikerRigidbody.velocity = direction * strikerspeed;      
         }
     }
 
