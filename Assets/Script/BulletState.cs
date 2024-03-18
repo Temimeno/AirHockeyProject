@@ -18,10 +18,10 @@ public class BulletState : NetworkBehaviour
     public NetworkVariable<int> bulletP2 = new NetworkVariable<int>(0,
     NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
 
-    public NetworkVariable<int> HpP1 = new NetworkVariable<int>(7,
+    public NetworkVariable<int> HpP1 = new NetworkVariable<int>(3,
     NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
 
-    public NetworkVariable<int> HpP2 = new NetworkVariable<int>(7,
+    public NetworkVariable<int> HpP2 = new NetworkVariable<int>(3,
     NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
 
     void Start()
