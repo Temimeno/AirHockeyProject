@@ -8,9 +8,11 @@ public class GunRight : NetworkBehaviour
     public GameObject bulletRight;
     public List<GameObject> spawnerBulletRight = new List<GameObject>();
     PlayerStats playerStats;
+    BulletState bulletSate;
 
     void Start()
     {
+        bulletSate = GetComponent<BulletState>();
         playerStats = GameObject.FindGameObjectWithTag("ScoreManager").GetComponent<PlayerStats>();
     }
 
@@ -19,10 +21,10 @@ public class GunRight : NetworkBehaviour
         if(!IsOwner) return;
         if(Input.GetKeyDown(KeyCode.Mouse0))
         {
-            if(playerStats.bulletP2.Value >= 1)
+            if(bulletSate.bulletP2.Value >= 1)
             {
                 SpawnBulletRightServerRpc();
-                playerStats.bulletP2.Value--;
+                bulletSate.bulletP2.Value--;
             }
         }
     }
@@ -30,7 +32,7 @@ public class GunRight : NetworkBehaviour
     [ServerRpc]
     public void SpawnBulletRightServerRpc()
     {
-        Vector3 spawnPos = transform.position + (-transform.right * 1f);
+        Vector3 spawnPos = transform.position + (transform.right * -1f);
         Quaternion spawnRot = transform.rotation;
         GameObject bulletRightNew = Instantiate(bulletRight, spawnPos, spawnRot);
         spawnerBulletRight.Add(bulletRightNew);

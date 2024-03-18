@@ -18,15 +18,15 @@ public class GunCube : NetworkBehaviour
         {
             ulong networkObjId = GetComponent<NetworkObject>().NetworkObjectId;
             spawnerBulletCube.DestroyServerRpc(networkObjId);
-
-            roomManager_SpawnStriker.IncreaseBulletPlayer1();
+            
+            //roomManager_SpawnStriker.IncreaseBulletPlayer1();
         }
         if(col.gameObject.tag == "Player2")
         {
             ulong networkObjId = GetComponent<NetworkObject>().NetworkObjectId;
             spawnerBulletCube.DestroyServerRpc(networkObjId);
 
-            roomManager_SpawnStriker.IncreaseBulletPlayer2();
+            //roomManager_SpawnStriker.IncreaseBulletPlayer2();
         }
         if(col.gameObject.tag == "striker")
         {

@@ -27,7 +27,7 @@ public class BulletRight : NetworkBehaviour
 
     void FixedUpdate()
     {
-        transform.position += transform.right * bulletspeed * Time.deltaTime;
+        transform.position += -transform.right * bulletspeed * Time.deltaTime;
     }
 
     void OnCollisionEnter(Collision col)
