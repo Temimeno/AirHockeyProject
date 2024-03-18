@@ -6,6 +6,7 @@ using TMPro;
 
 public class BulletState : NetworkBehaviour
 {
+    public GameEnding gameEnding;
     TMP_Text p1Bullet;
     TMP_Text p2Bullet;
     TMP_Text p1Hp;
@@ -29,6 +30,7 @@ public class BulletState : NetworkBehaviour
         p2Bullet = GameObject.Find("P2Bullet (TMP)").GetComponent<TMP_Text>();
         p1Hp = GameObject.Find("HpP1Text(TMP)").GetComponent<TMP_Text>();
         p2Hp = GameObject.Find("HpP2Text(TMP)").GetComponent<TMP_Text>();
+        gameEnding = GameObject.FindGameObjectWithTag("ScoreManager").GetComponent<GameEnding>();
     }
 
     private void UpdatePlayerNameAndScore()
@@ -49,6 +51,16 @@ public class BulletState : NetworkBehaviour
     void Update()
     {
         UpdatePlayerNameAndScore();
+
+        if (HpP1.Value == 0)
+        {
+            gameEnding.P2Win();
+        }
+
+        if (HpP2.Value == 0)
+        {
+            gameEnding.P1Win();
+        }
     }
 
     private void OnCollisionEnter(Collision col)
@@ -72,15 +84,18 @@ public class BulletState : NetworkBehaviour
                 }
             }
         }
-        else if(col.gameObject.tag == "Bullet")
+
+        if(col.gameObject.tag == "Bullet")
         {
             if(IsOwnedByServer)
             {
                 HpP1.Value--;
+                Debug.Log(HpP1.Value);
             }
             else
             {
                 HpP2.Value--;
+                Debug.Log(HpP2.Value);
             }
         }
     }

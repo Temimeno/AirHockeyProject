@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7068187506545777180}
   - component: {fileID: 7342195570576112310}
   - component: {fileID: 2256940247208926569}
+  - component: {fileID: -3299311884356063374}
   - component: {fileID: 589067934543234673}
   - component: {fileID: 8598327441385638146}
   m_Layer: 0
@@ -134,6 +135,18 @@ MonoBehaviour:
   InLocalSpace: 0
   Interpolate: 1
   SlerpPosition: 0
+--- !u!114 &-3299311884356063374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1478308090599264730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6c0be61502bb534f922ebb746851216, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &589067934543234673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,6 +177,10 @@ MonoBehaviour:
     m_InternalValue: 0
   bulletP2:
     m_InternalValue: 0
+  HpP1:
+    m_InternalValue: 7
+  HpP2:
+    m_InternalValue: 7
 --- !u!1 &2583921745271504381
 GameObject:
   m_ObjectHideFlags: 0
@@ -178,7 +195,7 @@ GameObject:
   - component: {fileID: 8314532247729916446}
   m_Layer: 0
   m_Name: Cylinder
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -284,7 +301,7 @@ GameObject:
   - component: {fileID: 555370348553943281}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

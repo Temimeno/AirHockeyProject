@@ -177,6 +177,10 @@ MonoBehaviour:
     m_InternalValue: 0
   bulletP2:
     m_InternalValue: 0
+  HpP1:
+    m_InternalValue: 7
+  HpP2:
+    m_InternalValue: 7
 --- !u!1 &2583921745271504381
 GameObject:
   m_ObjectHideFlags: 0
@@ -191,7 +195,7 @@ GameObject:
   - component: {fileID: 8314532247729916446}
   m_Layer: 0
   m_Name: Cylinder
-  m_TagString: Untagged
+  m_TagString: Player2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -297,7 +301,7 @@ GameObject:
   - component: {fileID: 555370348553943281}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Player2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -47,12 +47,10 @@ public class Bullet : NetworkBehaviour
             ulong networkObjId = GetComponent<NetworkObject>().NetworkObjectId;
             gun.DestroyServerRpc(networkObjId);
         }
-        if(col.gameObject.tag == "Player")
+        if(col.gameObject.tag == "Player2")
         {
             ulong networkObjId = GetComponent<NetworkObject>().NetworkObjectId;
             gun.DestroyServerRpc(networkObjId);
-
-            //Player เอาไว้ลดเลือด
         }
 
         

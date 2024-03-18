@@ -6,6 +6,7 @@ using TMPro;
 
 public class PlayerStats : NetworkBehaviour
 {
+    public GameEnding gameEnding;
     TMP_Text p1Text;
     TMP_Text p2Text;
     //TMP_Text p1Bullet;
@@ -30,6 +31,7 @@ public class PlayerStats : NetworkBehaviour
         p2Text = GameObject.Find("ClientScore (TMP)").GetComponent<TMP_Text>();
         //p1Bullet = GameObject.Find("P1Bullet (TMP)").GetComponent<TMP_Text>();
         //p2Bullet = GameObject.Find("P2Bullet (TMP)").GetComponent<TMP_Text>();
+        gameEnding = GameObject.FindGameObjectWithTag("ScoreManager").GetComponent<GameEnding>();
     }
 
     private void UpdatePlayerNameAndScore()
@@ -44,5 +46,15 @@ public class PlayerStats : NetworkBehaviour
     void Update()
     {
         UpdatePlayerNameAndScore();
+
+        if (scoreP1.Value == 3)
+        {
+            gameEnding.P1Win();
+        }
+
+        if (scoreP2.Value == 3)
+        {
+            gameEnding.P2Win();
+        }
     }
 }

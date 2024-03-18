@@ -52,8 +52,6 @@ public class BulletRight : NetworkBehaviour
         {
             ulong networkObjId = GetComponent<NetworkObject>().NetworkObjectId;
             gunRight.DestroyServerRpc(networkObjId);
-
-            //Player เอาไว้ลดเลือด
         }
     }
 }
