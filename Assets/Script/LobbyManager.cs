@@ -19,7 +19,7 @@ public class LobbyManager : MonoBehaviour
             int maxPlayers = 2; //จำนวนของผู้เล่นเข้าสู่ห้อง Lobby
             CreateLobbyOptions createLobbyOptions = new CreateLobbyOptions
             {
-                IsPrivate = true    
+                IsPrivate = false    
             };
             Lobby lobby = await LobbyService.Instance.CreateLobbyAsync(lobbyName, maxPlayers, createLobbyOptions);
             hostLobby = lobby;
@@ -89,6 +89,20 @@ public class LobbyManager : MonoBehaviour
         {
             await Lobbies.Instance.JoinLobbyByCodeAsync(lobbyCode);
             Debug.Log("Joined Lobby with code : " + lobbyCode);
+        }
+        catch (LobbyServiceException e)
+        {
+            Debug.Log(e);
+        }
+    }
+
+    [Command]
+    private async void QuickJoinInLobby()
+    {
+        try
+        {
+            Lobby lobby = await LobbyService.Instance.QuickJoinLobbyAsync();
+            Debug.Log(lobby.Name + " , " + lobby.AvailableSlots);
         }
         catch (LobbyServiceException e)
         {
