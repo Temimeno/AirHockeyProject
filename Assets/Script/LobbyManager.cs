@@ -5,7 +5,7 @@ using Unity.Services.Lobbies;
 using Unity.Services.Lobbies.Models;
 using UnityEngine;
 
-public class LobbyManager : MonoBehaviour
+public class LobbyManager : Singleton<LobbyManager>
 {
     private Lobby hostLobby;
 
