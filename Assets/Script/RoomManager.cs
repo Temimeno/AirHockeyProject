@@ -46,10 +46,6 @@ public class RoomManager : MonoBehaviour
 
     public async void Host()
     {
-        if(RelayManager.Instance.IsRelayEnabled)
-        {
-            await RelayManager.Instance.CreateRelay();
-        }
         NetworkManager.Singleton.ConnectionApprovalCallback = ApprovalCheck;
         NetworkManager.Singleton.StartHost();
         Debug.Log("Start Host");

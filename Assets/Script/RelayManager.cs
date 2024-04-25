@@ -9,14 +9,9 @@ using QFSW.QC;
 using Unity.Networking.Transport.Relay;
 using Unity.Netcode;
 using Unity.Netcode.Transports.UTP;
-using System.Threading.Tasks;
 
-public class RelayManager : Singleton<RelayManager>
+public class RelayManager : MonoBehaviour
 {
-    public UnityTransport Transport =>
-        NetworkManager.Singleton.GetComponent<UnityTransport>();
-    public bool IsRelayEnabled =>
-        Transport != null && Transport.Protocol == UnityTransport.ProtocolType.RelayUnityTransport;
     private async void Start()
     {
         await UnityServices.InitializeAsync();
@@ -32,7 +27,7 @@ public class RelayManager : Singleton<RelayManager>
     }
 
     [Command]
-    public async Task CreateRelay()
+    public async void CreateRelay()
     {
         try
         {
@@ -43,7 +38,7 @@ public class RelayManager : Singleton<RelayManager>
             RelayServerData relayServerData = new RelayServerData(allocation, "dtls");
             NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(relayServerData);
 
-            //NetworkManager.Singleton.StartHost();
+            NetworkManager.Singleton.StartHost();
         }
 
         catch (RelayServiceException e)
@@ -53,7 +48,7 @@ public class RelayManager : Singleton<RelayManager>
     }
 
     [Command]
-    private async void JoinRelay(string joinCode)
+    public async void JoinRelay(string joinCode)
     {
         try
         {
