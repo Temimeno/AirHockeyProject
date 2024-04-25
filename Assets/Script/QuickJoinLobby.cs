@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Unity.Services.Authentication;
-using ParrelSync;
 using Unity.Services.Core;
 using System.Threading.Tasks;
 using Unity.Services.Lobbies;
