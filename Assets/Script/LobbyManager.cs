@@ -16,7 +16,7 @@ public class LobbyManager : MonoBehaviour
         try
         {
             string lobbyName = "new lobby";
-            int maxPlayers = 4;
+            int maxPlayers = 2; //จำนวนของผู้เล่นเข้าสู่ห้อง Lobby
             Lobby lobby = await LobbyService.Instance.CreateLobbyAsync(lobbyName, maxPlayers);
             hostLobby = lobby;
             StartCoroutine(HeartbeatLobbyCoroutine(hostLobby.Id, 15));
@@ -58,6 +58,21 @@ public class LobbyManager : MonoBehaviour
             }
         }
         catch (LobbyServiceException e)
+        {
+            Debug.Log(e);
+        }
+    }
+
+    [Command]
+    private async void JoinLobby()
+    {
+        try
+        {
+            QueryResponse queryResponse = await LobbyService.Instance.QueryLobbiesAsync();
+            await Lobbies.Instance.JoinLobbyByIdAsync(queryResponse.Results[0].Id);
+            Debug.Log(queryResponse.Results[0].Name + " , " + queryResponse.Results[0].AvailableSlots);
+        }
+        catch(LobbyServiceException e)
         {
             Debug.Log(e);
         }
