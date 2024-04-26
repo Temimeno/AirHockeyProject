@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Untitled.unity
+    path: Assets/Scenes/Showdown Map.unity
     guid: 0d417288f757a594094fb9f282860ea1
   m_configObjects: {}

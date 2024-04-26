@@ -27,7 +27,7 @@ public class QuickJoinLobby : MonoBehaviour
         startButton.SetActive(false);
         startGamePanel.SetActive(false);
 
-        joinedLobby = await QuickJoin() ?? await CreateLobby();
+        joinedLobby = await CreateLobby();
         if (joinedLobby == null)
         {
             startButton.SetActive(true);
@@ -46,6 +46,7 @@ public class QuickJoinLobby : MonoBehaviour
 
             CreateLobbyOptions createLobbyOptions = new CreateLobbyOptions
             {
+                IsPrivate = false,
                 Data = new Dictionary<string, DataObject>
                 {
                     {"JoinCodeKey", new DataObject(DataObject.VisibilityOptions.Public, joinCode)}
@@ -60,6 +61,8 @@ public class QuickJoinLobby : MonoBehaviour
             NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(relayServerData);
 
             // Start the room immediately (or can wait for the lobby to fill up)
+
+            //Instantiate(p1Prefab, new Vector3(-5, 0, 0), Quaternion.identity);
             NetworkManager.Singleton.StartHost();
 
             Debug.Log("Join Code = " + joinCode);
@@ -129,27 +132,6 @@ public class QuickJoinLobby : MonoBehaviour
             Debug.Log("No lobbies avaliable via quick join");
             return null;
         }
-    }
-
-    private void setSpawnLocation(ulong clientId, NetworkManager.ConnectionApprovalResponse response)
-    {
-        Vector3 spawnPos = Vector3.zero;
-        Quaternion spawnRot = Quaternion.identity;
-
-        if (clientId == NetworkManager.Singleton.LocalClientId)
-        {
-            spawnPos = new Vector3(-5.6f, 0f, 0f);
-            spawnRot = Quaternion.Euler(0f, 0f, 0f);
-        }
-
-        else
-        {
-            spawnPos = new Vector3(5.6f, 0f, 0f);
-            spawnRot = Quaternion.Euler(0f, 0f, 0f);
-        }
-
-        response.Position = spawnPos;
-        response.Rotation = spawnRot;
     }
 
     IEnumerator HeartbeatLobbyCoroutine(string lobbyId, float waitTimeSeconds)
