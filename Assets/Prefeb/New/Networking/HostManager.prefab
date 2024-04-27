@@ -46,4 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxConnections: 4
   characterSelectSceneName: CharacterSelect
-  gameplaySceneName: Gameplay
+  gameplaySceneName: Showdown Map
