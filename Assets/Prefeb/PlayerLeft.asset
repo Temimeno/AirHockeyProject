@@ -16,5 +16,5 @@ MonoBehaviour:
   displayName: LeftSide
   icon: {fileID: 21300000, guid: 3130d3508402bf449ac8ccce8304304c, type: 3}
   introPrefab: {fileID: 1478308090599264730, guid: 3de5455700e0a774bb4583b9c52a8d7a, type: 3}
-  gameplayPrefab: {fileID: 3093816172880767596, guid: 3de5455700e0a774bb4583b9c52a8d7a, type: 3}
+  gameplayPrefab: {fileID: 3093816172880767596, guid: 77795016f26a5674f89c0077e7e35704, type: 3}
   prefebs: {fileID: 3093816172880767596, guid: 77795016f26a5674f89c0077e7e35704, type: 3}
