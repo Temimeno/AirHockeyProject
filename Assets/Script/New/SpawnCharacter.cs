@@ -22,7 +22,7 @@ public class SpawnCharacter : NetworkBehaviour
                 var characterInstance = Instantiate(character.Prefebs, spawnPos, spawnRot);
                 characterInstance.SpawnAsPlayerObject(client.Value.clientId);
             }
-            else
+            if (character != null && character.Id == 2)
             {
                 var spawnPos = new Vector3(5.6f, 0f, 0f);
                 var spawnRot = Quaternion.Euler(0f, 0f, 0f);
