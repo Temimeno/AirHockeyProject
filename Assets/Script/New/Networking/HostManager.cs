@@ -16,7 +16,7 @@ public class HostManager : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private int maxConnections = 4;
     [SerializeField] private string characterSelectSceneName = "CharacterSelect";
-    [SerializeField] private string gameplaySceneName = "Gameplay";
+    [SerializeField] private string gameplaySceneName = "Showdown";
 
     public static HostManager Instance { get; private set; }
 
