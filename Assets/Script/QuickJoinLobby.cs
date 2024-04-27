@@ -14,25 +14,19 @@ using Unity.Netcode.Transports.UTP;
 using Unity.Networking.Transport.Relay;
 using TMPro;
 using Mono.CSharp.Linq;
+using UnityEngine.SceneManagement;
 
-public class QuickJoinLobby : MonoBehaviour
+public class QuickJoinLobbyScript : MonoBehaviour
 {
-    public GameObject startButton;
-    public GameObject startGamePanel;
     string lobbyName = "MyLobby";
     private Lobby joinedLobby;
+    private bool gameHasStarted;
+    [SerializeField] private string characterSelectSceneName = "CharacterSelect";
+    public Dictionary<ulong, ClientData> ClientData { get; private set; }
 
     public async void CreateOrJoinLobby()
     {
-        startButton.SetActive(false);
-        startGamePanel.SetActive(false);
-
-        joinedLobby = await CreateLobby();
-        if (joinedLobby == null)
-        {
-            startButton.SetActive(true);
-            startGamePanel.SetActive(true);
-        }
+        joinedLobby = await QuickJoinLobby() ?? await CreateLobby();
     }
 
     private async Task<Lobby> CreateLobby()
@@ -62,7 +56,11 @@ public class QuickJoinLobby : MonoBehaviour
 
             // Start the room immediately (or can wait for the lobby to fill up)
 
-            //Instantiate(p1Prefab, new Vector3(-5, 0, 0), Quaternion.identity);
+            NetworkManager.Singleton.ConnectionApprovalCallback += ApprovalCheck;
+            NetworkManager.Singleton.OnServerStarted += OnNetworkReady;
+
+            ClientData = new Dictionary<ulong, ClientData>();
+
             NetworkManager.Singleton.StartHost();
 
             Debug.Log("Join Code = " + joinCode);
@@ -101,7 +99,7 @@ public class QuickJoinLobby : MonoBehaviour
         }
     }
 
-    private async Task<Lobby> QuickJoin()
+    private async Task<Lobby> QuickJoinLobby()
     {
         try
         {
@@ -131,6 +129,41 @@ public class QuickJoinLobby : MonoBehaviour
         {
             Debug.Log("No lobbies avaliable via quick join");
             return null;
+        }
+    }
+
+    private void ApprovalCheck(NetworkManager.ConnectionApprovalRequest request, NetworkManager.ConnectionApprovalResponse response)
+    {
+        if (ClientData.Count >= 2 || gameHasStarted)
+        {
+            response.Approved = false;
+            return;
+        }
+
+        response.Approved = true;
+        response.CreatePlayerObject = false;
+        response.Pending = false;
+
+        ClientData[request.ClientNetworkId] = new ClientData(request.ClientNetworkId);
+
+        Debug.Log($"Added client {request.ClientNetworkId}");
+    }
+
+    private void OnNetworkReady()
+    {
+        NetworkManager.Singleton.OnClientDisconnectCallback += OnClientDisconnect;
+
+        NetworkManager.Singleton.SceneManager.LoadScene(characterSelectSceneName, LoadSceneMode.Single);
+    }
+
+    private void OnClientDisconnect(ulong clientId)
+    {
+        if (ClientData.ContainsKey(clientId))
+        {
+            if (ClientData.Remove(clientId))
+            {
+                Debug.Log($"Removed client {clientId}");
+            }
         }
     }
 

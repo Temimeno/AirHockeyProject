@@ -44,6 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b095167c6af80c46bbeb56d9a58e116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxConnections: 4
+  maxConnections: 2
   characterSelectSceneName: CharacterSelect
   gameplaySceneName: Showdown Map

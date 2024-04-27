@@ -10,6 +10,7 @@ using Unity.Services.Relay;
 using Unity.Services.Relay.Models;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Threading.Tasks;
 
 public class HostManager : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class HostManager : MonoBehaviour
 
     private bool gameHasStarted;
     private string lobbyId;
+
 
     public Dictionary<ulong, ClientData> ClientData { get; private set; }
     public string JoinCode { get; private set; }
