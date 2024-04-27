@@ -9,11 +9,9 @@ public class Gun : NetworkBehaviour
     public List<GameObject> spawnerBullet = new List<GameObject>();
 
     BulletState bulletState;
-    PlayerStats playerStats;
     
     void Start()
     {
-        playerStats = GameObject.FindGameObjectWithTag("ScoreManager").GetComponent<PlayerStats>();
         bulletState = GetComponent<BulletState>();
     }
 

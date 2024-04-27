@@ -7,13 +7,11 @@ public class GunRight : NetworkBehaviour
 {
     public GameObject bulletRight;
     public List<GameObject> spawnerBulletRight = new List<GameObject>();
-    PlayerStats playerStats;
     BulletState bulletSate;
 
     void Start()
     {
         bulletSate = GetComponent<BulletState>();
-        playerStats = GameObject.FindGameObjectWithTag("ScoreManager").GetComponent<PlayerStats>();
     }
 
     void Update()

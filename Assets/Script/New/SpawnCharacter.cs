@@ -19,6 +19,7 @@ public class SpawnCharacter : NetworkBehaviour
             {
                 var spawnPos = new Vector3(-5.6f, 0f, 0f);
                 var spawnRot = Quaternion.Euler(0f, 0f, 0f);
+                StartCoroutine(WaitforMap());
                 var characterInstance = Instantiate(character.GameplayPrefab, spawnPos, spawnRot);
                 characterInstance.SpawnAsPlayerObject(client.Value.clientId);
             }
@@ -26,9 +27,15 @@ public class SpawnCharacter : NetworkBehaviour
             {
                 var spawnPos = new Vector3(5.6f, 0f, 0f);
                 var spawnRot = Quaternion.Euler(0f, 0f, 0f);
+                StartCoroutine(WaitforMap());
                 var characterInstance = Instantiate(character.GameplayPrefab, spawnPos, spawnRot);
                 characterInstance.SpawnAsPlayerObject(client.Value.clientId);
             }
         }
+    }
+
+    IEnumerator WaitforMap()
+    {
+        yield return new WaitForSeconds(50f);
     }
 }

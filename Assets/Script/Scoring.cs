@@ -6,7 +6,6 @@ using Unity.Netcode;
 public class Scoring : NetworkBehaviour
 {
     public GameObject scoreManager; 
-    PlayerStats playerStats;
     public RoomManager_SpawnStriker roomManager_SpawnStriker;
 
     private void Start()
