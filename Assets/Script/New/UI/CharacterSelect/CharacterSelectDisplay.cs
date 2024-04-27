@@ -11,8 +11,6 @@ public class CharacterSelectDisplay : NetworkBehaviour
     [SerializeField] private Transform charactersHolder;
     [SerializeField] private CharacterSelectButton selectButtonPrefab;
     [SerializeField] private PlayerCard[] playerCards;
-    [SerializeField] private GameObject characterInfoPanel;
-    [SerializeField] private TMP_Text characterNameText;
     [SerializeField] private Transform introSpawnPoint;
     [SerializeField] private TMP_Text joinCodeText;
     [SerializeField] private Button lockInButton;
@@ -101,10 +99,6 @@ public class CharacterSelectDisplay : NetworkBehaviour
 
             if (IsCharacterTaken(character.Id, false)) { return; }
         }
-
-        characterNameText.text = character.DisplayName;
-
-        characterInfoPanel.SetActive(true);
 
         if (introInstance != null)
         {

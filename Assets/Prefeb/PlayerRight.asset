@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PlayerRight
   m_EditorClassIdentifier: 
   id: 6
-  displayName: PlayerRight
+  displayName: RightSide
   icon: {fileID: 21300000, guid: cb4148e8bb32cdd4cb6eb21817bb4fb5, type: 3}
   introPrefab: {fileID: 1478308090599264730, guid: bc8d6c4fb25673c47a9dde080eabe89f, type: 3}
   gameplayPrefab: {fileID: 3093816172880767596, guid: bc8d6c4fb25673c47a9dde080eabe89f, type: 3}

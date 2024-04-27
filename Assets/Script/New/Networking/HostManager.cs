@@ -14,7 +14,7 @@ using UnityEngine.SceneManagement;
 public class HostManager : MonoBehaviour
 {
     [Header("Settings")]
-    [SerializeField] private int maxConnections = 4;
+    [SerializeField] private int maxConnections = 2;
     [SerializeField] private string characterSelectSceneName = "CharacterSelect";
     [SerializeField] private string gameplaySceneName = "Showdown";
 
@@ -114,7 +114,7 @@ public class HostManager : MonoBehaviour
 
     private void ApprovalCheck(NetworkManager.ConnectionApprovalRequest request, NetworkManager.ConnectionApprovalResponse response)
     {
-        if (ClientData.Count >= 4 || gameHasStarted)
+        if (ClientData.Count >= 2 || gameHasStarted)
         {
             response.Approved = false;
             return;
